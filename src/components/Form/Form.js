@@ -13,18 +13,6 @@ const Form = () => {
     setFirstName("");
     setLastName("");
     setBestImpression("");
-
-    // try {
-    //     const body = { description }; //create an objcet with property description
-    //     const response = await fetch("http://localhost:5000/todos", {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(body),
-    //     }); //by default fetch makes a GET request
-    //     window.location = "/"; //not sure what this will do!
-    // } catch (err) {
-    //     console.error(err.message);
-    // }
   };
 
   return (
