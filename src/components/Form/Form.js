@@ -5,9 +5,14 @@ const Form = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [bestImpression, setBestImpression] = useState("");
+
   //create onSubmitForm
   const onSubmitForm = async (event) => {
     event.preventDefault();
+    alert(`Thanks for joining us ${firstName}!`);
+    setFirstName("");
+    setLastName("");
+    setBestImpression("");
 
     // try {
     //     const body = { description }; //create an objcet with property description
@@ -24,27 +29,36 @@ const Form = () => {
 
   return (
     <Fragment>
-      <form className="d-flex mt-5" onSubmit={onSubmitForm}>
+      <form className="submit-form" onSubmit={onSubmitForm}>
         <input
           type="text"
-          className="form-control first-name"
+          className="first-name"
           value={firstName}
+          placeholder="First Name"
           onChange={(event) => setFirstName(event.target.value)}
         />
         <input
           type="text"
-          className="form-control last-name"
+          className="last-name"
           value={lastName}
+          placeholder="Last Name"
           onChange={(event) => setLastName(event.target.value)}
         />
         <input
           type="text"
-          className="form-control best-impression"
+          className="best-impression"
           value={bestImpression}
+          placeholder="Best Impression"
           onChange={(event) => setBestImpression(event.target.value)}
         />
-        <button className="btn btn-success">Join us!</button>
+        <button>Join us!</button>
       </form>
+      <p>
+        {firstName !== "" &&
+          lastName !== "" &&
+          bestImpression !== "" &&
+          `${firstName}'s best impression is ${bestImpression}`}
+      </p>
     </Fragment>
   );
 };
